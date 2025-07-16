@@ -17,3 +17,5 @@
 - [x] sentry
 - [x] posthog
 - [x] logrocket
+- [x] storybook
+
