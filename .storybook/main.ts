@@ -1,12 +1,22 @@
-import type { StorybookConfig } from '@storybook/nextjs';
+import type { StorybookConfig } from "@storybook/nextjs-vite";
 
 const config: StorybookConfig = {
-  // ...
-  // framework: '@storybook/react-webpack5', 👈 Remove this
-  framework: '@storybook/nextjs', // 👈 Add this
-  stories: [
-    '../src/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+  "stories": [
+    "../src/**/*.mdx",
+    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
+  "addons": [
+    "@chromatic-com/storybook",
+    "@storybook/addon-docs",
+    "@storybook/addon-a11y",
+    "@storybook/addon-vitest"
+  ],
+  "framework": {
+    "name": "@storybook/nextjs-vite",
+    "options": {}
+  },
+  "staticDirs": [
+    "../public"
+  ]
 };
-
 export default config;
