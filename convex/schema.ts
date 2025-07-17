@@ -10,6 +10,17 @@ export default defineSchema ({
         content: v.string(),
         sender: v.string(),
         timestamp: v.number(),
-    })
+    }),
+
+    docs: defineTable({
+        // Define the fields of the docs table
+        title: v.string(),
+        content: v.string(),
+        createdAt: v.number(),
+        updatedAt: v.number(),
+        user: v.string(), // Reference to the user who created the document
+    }),
+
+    
       
 })

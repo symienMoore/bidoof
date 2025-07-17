@@ -1,10 +1,11 @@
 "use client";
+import React from 'react'
 // import { TestApi} from '../../convex/messages';
 import { useUser } from '@clerk/nextjs';
 import { useQuery } from 'convex/react';
 import Link from 'next/link';
-import React from 'react'
 import { api } from '../../convex/_generated/api';
+import { motion } from "motion/react"
 
 
 
@@ -32,9 +33,13 @@ const UserWelcome = () => {
       <h1 className="text-2xl font-bold mb-4">Welcome back!</h1>
       <p className="text-lg mb-6">You are logged in. Enjoy your stay!</p>
       {/* Additional user-specific content can be added here */}
-      <button className="p-2 bg-purple-500 text-white rounded font-bold">
+      <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        onHoverStart={() => console.log('hover started!')}
+        className="p-2 bg-purple-500 text-white rounded font-bold">
         <Link href="/dashboard">go to dashboard</Link>
-      </button>
+      </motion.button>
     </div>
   )
 }

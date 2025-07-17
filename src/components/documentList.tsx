@@ -1,12 +1,23 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
+import { useQuery } from 'convex/react';
+import { api } from '../../convex/_generated/api';
 
 const DocumentList = () => {
+  // const [documents, setDocuments] = useState([])
+  const d = useQuery(api.uploads.fetchUploads) // This would be replaced with actual document data
+  // console.log(documents)
   return (
     <div>
         <h1 className="text-2xl font-bold mb-4">Document List</h1>
         <p className="text-lg mb-6">Here you can view your documents.</p>
-        {/* Document list content will go here */}
-        {/* Example: <ul>{documents.map(doc => <li key={doc.id}>{doc.title}</li>)}</ul> */} 
+         Document list content will go here 
+         {d?.map((doc) => {
+          return <div key={doc._id} className="border p-4 mb-4 rounded">
+            <h2 className="text-xl font-semibold">{doc.title}</h2>
+            <p className="text-gray-700">{doc.content}</p>  
+          </div>
+         })}
     </div>
   )
 }
