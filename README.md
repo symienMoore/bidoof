@@ -1,10 +1,10 @@
 ## TODO: 
 - [ ] make it deploy 
 - [x] add clerk
-- [ ] sentry set up
+- [x] sentry set up
 - [ ] posthog
 - [ ] log rocket
-- [ ] storybook
+- [x] storybook
 
 
 
