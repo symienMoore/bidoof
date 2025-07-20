@@ -1,12 +1,11 @@
 'use client'
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
 import { useQuery } from 'convex/react';
 import { api } from '../../convex/_generated/api';
+import { motion } from 'motion/react';
 
 const DocumentList = () => {
-  // const [documents, setDocuments] = useState([])
-  const d = useQuery(api.uploads.fetchUploads) // This would be replaced with actual document data
-  // console.log(documents)
+  const d = useQuery(api.uploads.fetchUploads) 
   return (
     <div>
         <h1 className="text-2xl font-bold mb-4">Document List</h1>
@@ -18,6 +17,9 @@ const DocumentList = () => {
             <p className="text-gray-700">{doc.content}</p>  
           </div>
          })}
+         <motion.button>
+            <p>add file</p>
+          </motion.button>
     </div>
   )
 }
