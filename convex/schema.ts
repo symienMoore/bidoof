@@ -8,7 +8,10 @@ export default defineSchema ({
     messages: defineTable({
         // Define the fields of the messages table
         content: v.string(),
-        sender: v.string(),
+        sender: v.id("users"),
+        receiver: v.id("users"),
+        createdAt: v.number(),
+        updatedAt: v.number(),
         timestamp: v.number(),
     }),
 

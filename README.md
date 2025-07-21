@@ -19,3 +19,10 @@
 - [x] logrocket
 - [x] storybook
 
+
+# 07-21-2025
+reviewed schema files from convex docs, small ui changes to document list
+- [ ] complete file upload
+- [ ] look ointo multi file upload
+- [ ] associate user id with uploads via clerk
+- [ ] store upload url in db along with user id
