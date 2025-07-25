@@ -1,4 +1,5 @@
-import { query } from "./_generated/server";
+import { v } from "convex/values";
+import { mutation, query } from "./_generated/server";
 
 
 
@@ -10,3 +11,28 @@ export const fetchUploads = query({
         return uploads;
     }
 })
+
+export const uploadFile = mutation({
+    handler: async (ctx) => {
+        return await ctx.storage.generateUploadUrl()
+    }
+})
+
+export const saveDocument = mutation({
+    args: {
+      storageId: v.id("_storage"),
+      title: v.string(),
+      user: v.string(),
+      // add other fields as needed
+    },
+    handler: async (ctx, args) => {
+      return await ctx.db.insert("docs", {
+        title: args.title,
+        content: "", // or any other content
+        createdAt: Date.now(),
+        updatedAt: Date.now(),
+        // Removed 'user' property as it does not exist in the "docs" table schema
+        // storageId is not a valid property for the "docs" table schema, so we remove it
+      });
+    },
+  });

@@ -19,3 +19,19 @@
 - [x] logrocket
 - [x] storybook
 
+
+# 07-21-2025
+reviewed schema files from convex docs, small ui changes to document list
+- [ ] complete file upload
+- [ ] look ointo multi file upload
+- [ ] associate user id with uploads via clerk
+- [ ] store upload url in db along with user id
+
+
+
+# 07-24-205
+currently working on the design and user flow of the application, 
+I need to review uploading figma files to github
+- [ ] complete style guide for Pressto.
+- [ ] design lsnding page
+- [ ] document upload is still in progress
