@@ -40,7 +40,7 @@ const Page = () => {
   }
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className='flex flex-col w-1/2 mx-auto my-auto' onSubmit={handleSubmit}>
       <input
         type="text"
         value={title}
