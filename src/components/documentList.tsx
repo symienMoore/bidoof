@@ -26,13 +26,21 @@ const DocumentList = () => {
     return (
       <div>
           <h1 className="text-2xl font-bold">Document List</h1>
-           {d?.map((doc) => {
+           {/* {d?.map((doc) => {
             return <div key={doc._id} className="border p-4 mb-4 rounded">
               <h2 className="text-xl font-semibold">{doc.title}</h2>
               <p className="text-gray-700">{doc.content}</p>  
             </div>
-           })}
-           <motion.button>
+           })} */}
+            <div className='grid grid-cols-3 gap-4'>
+              {d?.map((doc) => {
+                return <div key={doc._id} className="border p-4 mb-4 rounded">
+                  <h2 className="text-xl font-semibold">{doc.title}</h2>
+                  <p className="text-gray-700">{doc.content}</p>  
+                </div>
+              })}
+            </div>
+           <motion.button className='cursor-pointer'>
               <p>add file</p>
             </motion.button>
       </div>
