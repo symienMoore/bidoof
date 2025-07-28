@@ -35,6 +35,9 @@ const DocumentList = () => {
             <div className='grid grid-cols-3 gap-4'>
               {d?.map((doc) => {
                 return <div key={doc._id} className="border p-4 mb-4 rounded">
+                    <div>
+                      p
+                  </div>
                   <h2 className="text-xl font-semibold">{doc.title}</h2>
                   <p className="text-gray-700">{doc.content}</p>  
                 </div>
