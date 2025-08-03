@@ -35,3 +35,8 @@ I need to review uploading figma files to github
 - [ ] complete style guide for Pressto.
 - [ ] design lsnding page
 - [ ] document upload is still in progress
+
+
+# 08-03-2025
+file upload is working, went analog to aork on the ui/ux of things,
+specifically working on the dashbaord ux/ui of it.
