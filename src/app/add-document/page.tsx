@@ -3,21 +3,25 @@ import React, { useRef, useState } from 'react'
 import { useMutation } from 'convex/react'
 import { api } from '../../../convex/_generated/api'
 import { useUser } from '@clerk/nextjs'
+import { useAuth } from '@clerk/nextjs'
 
 const Page = () => {
-  const {user} = useUser();
+  // const {user} = useUser();
+  const { userId } = useAuth();
+  console.log(userId)
   // const [file, setFile] = useState<File | null>(null);
   const fileInput = useRef<HTMLInputElement>(null);
   const [title, setTitle] = useState<string>('');
   const [uploading, setUploading] = useState<boolean>(false);
   const uploadFileUrl = useMutation(api.uploads.uploadFile);
   const saveDocument = useMutation(api.uploads.saveDocument);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
    e.preventDefault();
    if(!fileInput.current?.files?.[0]) return;
    setUploading(true);
    const postUrl = await uploadFileUrl();
-   console.log(postUrl)
+
    const file = fileInput.current.files[0];
     const result = await fetch(postUrl, {
       method: "POST",
@@ -26,16 +30,14 @@ const Page = () => {
     });
     const { storageId } = await result.json();
 
-    // 3. Save document metadata
+    
     await saveDocument({
       storageId,
-      title,
-      user: user!.id, // Cast to 'any' to satisfy type 'Id<"users">'
+      title, 
+      url: postUrl,
+      userId
     });
 
-    // write a convex function that gets the file id and saves it to the doc in the db under the content field
-
-    console.log(uploadFileUrl, "test")
 
     setUploading(false);
     setTitle('');

@@ -44,7 +44,7 @@ const DocumentList = () => {
                     <div>
                     <File />
                   </div>
-                  <p className="text-gray-700">{doc.content}</p>  
+                  <p className="text-gray-700">{doc.title}</p>  
                   <div>{doc.createdAt}</div>
                 </div>
               })}

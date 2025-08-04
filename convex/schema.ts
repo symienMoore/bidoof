@@ -29,6 +29,8 @@ export default defineSchema ({
         createdAt: v.number(),
         updatedAt: v.number(),
         // user: v.id("users"), // Reference to the user who created the document
+        url: v.string(),
+        userId: v.string()
     }),
 
     folders: defineTable({
