@@ -33,9 +33,9 @@ const DocumentList = () => {
           <h1 className="text-2xl font-bold">Document List</h1>
             <div className='grid grid-cols-3 gap-4'>
               {d?.map((doc) => {
-                return <div key={doc._id} className="mb-4">
-                  <div className="bg-gray-50 p-32 flex justify-center items-center w-64" >
-                    <div className="bg-white p-16 flex center shadow rounded-md">
+                return <div key={doc._id} className="m-4">
+                  <div className="bg-gray-50 p-15 flex justify-center items-center w-80" >
+                    <div className="bg-white p-10 flex center shadow rounded-md mt-auto">
                     <File size={48}/>
                   </div> 
                   </div>
