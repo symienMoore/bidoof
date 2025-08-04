@@ -28,7 +28,7 @@ const Sidebar = () => {
               <li>
                 <Link 
                   href="/messages" 
-                  className="flex items-center gap-3 px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-purple-200 rounded-md transition-colors text-sm"
+                  className="flex items-center gap-3 px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-purple-500 rounded-md transition-colors text-sm"
                 >
                   <MessageSquare size={18} />
                   <span>Messages</span>
