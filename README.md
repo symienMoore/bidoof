@@ -40,3 +40,5 @@ I need to review uploading figma files to github
 # 08-03-2025
 file upload is working, went analog to aork on the ui/ux of things,
 specifically working on the dashbaord ux/ui of it.
+*update*: file url wasnt being saved to the document in the databse, so
+I updated that really quick.

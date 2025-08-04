@@ -28,7 +28,7 @@ export const saveDocument = mutation({
     handler: async (ctx, args) => {
       return await ctx.db.insert("docs", {
         title: args.title,
-        content: "", // or any other content
+        content: args.storageId, // or any other content
         createdAt: Date.now(),
         updatedAt: Date.now(),
         // Removed 'user' property as it does not exist in the "docs" table schema

@@ -33,6 +33,10 @@ const Page = () => {
       user: user!.id, // Cast to 'any' to satisfy type 'Id<"users">'
     });
 
+    // write a convex function that gets the file id and saves it to the doc in the db under the content field
+
+    console.log(uploadFileUrl, "test")
+
     setUploading(false);
     setTitle('');
     if (fileInput.current) fileInput.current.value = '';
