@@ -7,10 +7,11 @@ import {
   SignedOut,
   UserButton,
 } from '@clerk/nextjs'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Geist, Geist_Mono, Ranchers } from 'next/font/google'
 import './globals.css'
 import { ConvexClientProvider } from './ConvexClientProvider'
 import Sidebar from '@/components/sidebar'
+import { Toaster } from 'sonner'
 // import { useEffect } from 'react'
 // import { initLogRocket } from "../utils/logrocket";
 
@@ -21,6 +22,12 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
+  subsets: ['latin'],
+})
+
+const ranchers = Ranchers({
+  variable: '--font-ranchers',
+  weight: '400',
   subsets: ['latin'],
 })
 
@@ -39,7 +46,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <body className={`${geistSans.variable} ${geistMono.variable} ${ranchers.variable} antialiased`}>
           <header className="flex justify-end items-center p-4 gap-4 h-16 bg-background">
             <h1>pressto</h1>
             <SignedOut>
@@ -60,6 +67,7 @@ export default function RootLayout({
               <ConvexClientProvider>{children}</ConvexClientProvider>
             </main>
           </div>
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>

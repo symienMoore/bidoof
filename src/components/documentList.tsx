@@ -5,13 +5,10 @@ import { api } from '../../convex/_generated/api';
 import { motion } from 'motion/react';
 import { File, FilePlus } from "lucide-react";
 import Link from 'next/link';
-import { Button } from './ui/button';
-// import { Calendar, Download, Eye, MoreHorizontal, Trash2, Share2, Star, FolderOpen, Badge } from "lucide-react"
-// import { Button } from "@/components/ui/button"
-// import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from '@radix-ui/react-dropdown-menu';
-// import { useState } from 'react';
-// import { Card, CardContent } from './ui/card';
-// Removed unused imports to fix lint errors
+
+
+
+
 export const EmptyList = () => {
   return (
     <>
@@ -31,11 +28,11 @@ const DocumentList = () => {
   } else {
     return (
       <div>
-          <h1 className="text-2xl font-bold">Document List</h1>
-            <div className='grid grid-cols-3 gap-4'>
-              {d?.map((doc) => {
-                return <div key={doc._id} className="m-4">
-                  <div className="bg-gray-50 p-15 flex justify-center items-center w-80" >
+          <h1 className="text-2xl font-bold font-ranchers">Document List</h1>
+            <div className='grid grid-cols-3 gap-4 w-full mt-48 mb-8'>
+              {d?.map((doc: unknown) => {
+                return <div key={doc._id} className="">
+                  <div className="bg-gray-50 p-12 flex justify-center items-center" >
                     <div className="bg-white p-10 flex center shadow rounded-md mt-auto">
                     <File size={48}/>
                   </div> 
@@ -46,7 +43,7 @@ const DocumentList = () => {
                   <div className="text-xs">created at: {new Date(doc.createdAt).toLocaleDateString()}</div>
                 </div>
               })}
-            </div>
+          </div>
            <motion.button className='cursor-pointer flex items-center gap-2 bg-purple-500 text-white p-2 rounded-md'>
               <FilePlus />
               <Link href="/add-document">

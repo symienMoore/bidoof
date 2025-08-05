@@ -2,13 +2,12 @@
 import React, { useRef, useState } from 'react'
 import { useMutation } from 'convex/react'
 import { api } from '../../../convex/_generated/api'
-import { useUser } from '@clerk/nextjs'
 import { useAuth } from '@clerk/nextjs'
+import { toast } from 'sonner'
 
 const Page = () => {
   // const {user} = useUser();
   const { userId } = useAuth();
-  console.log(userId)
   // const [file, setFile] = useState<File | null>(null);
   const fileInput = useRef<HTMLInputElement>(null);
   const [title, setTitle] = useState<string>('');
@@ -19,6 +18,10 @@ const Page = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
    e.preventDefault();
    if(!fileInput.current?.files?.[0]) return;
+   if(!userId) {
+     toast.error("Please sign in to upload documents");
+     return;
+   }
    setUploading(true);
    const postUrl = await uploadFileUrl();
 
@@ -42,10 +45,11 @@ const Page = () => {
     setUploading(false);
     setTitle('');
     if (fileInput.current) fileInput.current.value = '';
-    alert("Upload complete!"); 
+    toast.success("Upload complete!");
   }
   return (
     <div>
+      <h1 className="font-ranchers text-2xl">Upload document</h1>
       <form className='flex flex-col w-1/2 mx-auto my-auto' onSubmit={handleSubmit}>
       <input
         type="text"
