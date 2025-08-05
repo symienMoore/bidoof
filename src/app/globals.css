@@ -122,3 +122,7 @@
     color: #fff; */
   }
 }
+
+.font-ranchers {
+  font-family: var(--font-ranchers);
+}

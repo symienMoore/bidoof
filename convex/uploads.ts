@@ -34,9 +34,10 @@ export const saveDocument = mutation({
         createdAt: Date.now(),
         updatedAt: Date.now(),
         url: args.url,
-        userId: args.userId
+        userId: args.userId,
         // Removed 'user' property as it does not exist in the "docs" table schema
-        // storageId is not a valid property for the "docs" table schema, so we remove it
+        // storageId is not a valid property for the "docs" table schema, so we remove itf
+        favorite: false
       });
     },
   });
