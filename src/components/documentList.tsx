@@ -12,11 +12,11 @@ import Link from 'next/link';
 export const EmptyList = () => {
   return (
     <>
-       <h1 className="text-2xl font-bold">Document List</h1>
-        <p className="text-lg">Here you can view your documents.</p>
-         <motion.button>
-            <p>add file</p>
-          </motion.button>
+      <h1 className="text-2xl font-bold">Document List</h1>
+      <p className="text-lg">Here you can view your documents.</p>
+        <motion.button>
+          <p>add file</p>
+        </motion.button>
     </>
   )
 }
