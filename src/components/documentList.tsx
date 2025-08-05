@@ -3,9 +3,14 @@
 import { useQuery } from 'convex/react';
 import { api } from '../../convex/_generated/api';
 import { motion } from 'motion/react';
-
-
-
+import { File, FilePlus } from "lucide-react";
+import Link from 'next/link';
+// import { Calendar, Download, Eye, MoreHorizontal, Trash2, Share2, Star, FolderOpen, Badge } from "lucide-react"
+// import { Button } from "@/components/ui/button"
+// import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from '@radix-ui/react-dropdown-menu';
+// import { useState } from 'react';
+// import { Card, CardContent } from './ui/card';
+// Removed unused imports to fix lint errors
 export const EmptyList = () => {
   return (
     <>
@@ -26,29 +31,31 @@ const DocumentList = () => {
     return (
       <div>
           <h1 className="text-2xl font-bold">Document List</h1>
-           {/* {d?.map((doc) => {
-            return <div key={doc._id} className="border p-4 mb-4 rounded">
-              <h2 className="text-xl font-semibold">{doc.title}</h2>
-              <p className="text-gray-700">{doc.content}</p>  
-            </div>
-           })} */}
             <div className='grid grid-cols-3 gap-4'>
               {d?.map((doc) => {
-                return <div key={doc._id} className="border p-4 mb-4 rounded">
-                    <div>
-                      p
+                return <div key={doc._id} className="m-4">
+                  <div className="bg-gray-50 p-15 flex justify-center items-center w-80" >
+                    <div className="bg-white p-10 flex center shadow rounded-md mt-auto">
+                    <File size={48}/>
+                  </div> 
                   </div>
+                  {/* update schema to show the file size */}
+                  {/* <div>size: {doc.size}</div> */} 
                   <h2 className="text-xl font-semibold">{doc.title}</h2>
-                  <p className="text-gray-700">{doc.content}</p>  
+                  <div className="text-xs">created at: {new Date(doc.createdAt).toLocaleDateString()}</div>
                 </div>
               })}
             </div>
-           <motion.button className='cursor-pointer'>
-              <p>add file</p>
+           <motion.button className='cursor-pointer flex items-center gap-2 bg-purple-500 text-white p-2 rounded-md'>
+              <FilePlus />
+              <Link href="/add-document">
+              <p>new file</p>
+              </Link>
             </motion.button>
       </div>
     )
   }
 }
+
 
 export default DocumentList

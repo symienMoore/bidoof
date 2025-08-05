@@ -29,6 +29,9 @@ export default defineSchema ({
         createdAt: v.number(),
         updatedAt: v.number(),
         // user: v.id("users"), // Reference to the user who created the document
+        url: v.string(),
+        userId: v.string(),
+        favorite: v.boolean()
     }),
 
     folders: defineTable({
@@ -38,6 +41,7 @@ export default defineSchema ({
         updatedAt: v.number(),
         // user: v.id("users"), // Reference to the user who created the folder
         docs: v.array(v.id("docs")), // Array of document IDs in the folder
+        favorite: v.boolean()
     })
       
 })
