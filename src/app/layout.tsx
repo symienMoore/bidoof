@@ -47,7 +47,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} ${ranchers.variable} antialiased`}>
-          <header className="flex justify-end items-center p-4 gap-4 h-16 bg-background">
+          {/* <header className="flex justify-end items-center p-4 gap-4 h-16 bg-background">
             <h1>pressto</h1>
             <SignedOut>
               <SignInButton />
@@ -60,7 +60,7 @@ export default function RootLayout({
             <SignedIn>
               <UserButton />
             </SignedIn>
-          </header>
+          </header> */}
           <div className="flex h-[calc(100vh-4rem)]">
             <Sidebar />
             <main className="flex-1 overflow-auto">

@@ -46,8 +46,8 @@ const DocumentList = () => {
           </div>
            <motion.button className='cursor-pointer flex items-center gap-2 bg-purple-500 text-white p-2 rounded-md'>
               <FilePlus />
-              <Link href="/add-document">
-              <p>new file</p>
+                <Link href="/add-document">
+                <p>new file</p>
               </Link>
             </motion.button>
       </div>
