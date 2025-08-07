@@ -12,6 +12,7 @@ import './globals.css'
 import { ConvexClientProvider } from './ConvexClientProvider'
 import Sidebar from '@/components/sidebar'
 import { Toaster } from 'sonner'
+import Header from '@/components/ui/header'
 // import { useEffect } from 'react'
 // import { initLogRocket } from "../utils/logrocket";
 
@@ -62,7 +63,9 @@ export default function RootLayout({
             </SignedIn>
           </header> */}
           <div className="flex h-[calc(100vh-4rem)]">
-            <Sidebar />
+            {/* set these items to flex */}
+          <Sidebar />
+          <Header/>
             <main className="flex-1 overflow-auto">
               <ConvexClientProvider>{children}</ConvexClientProvider>
             </main>

@@ -5,6 +5,7 @@ import { api } from '../../convex/_generated/api';
 import { motion } from 'motion/react';
 import { File, FilePlus } from "lucide-react";
 import Link from 'next/link';
+import { Doc } from '../../convex/_generated/dataModel';
 
 
 
@@ -30,7 +31,7 @@ const DocumentList = () => {
       <div>
           <h1 className="text-2xl font-bold font-ranchers">Document List</h1>
             <div className='grid grid-cols-3 gap-4 w-full mt-48 mb-8'>
-              {d?.map((doc: unknown) => {
+              {d?.map((doc: Doc) => {
                 return <div key={doc._id} className="">
                   <div className="bg-gray-50 p-12 flex justify-center items-center" >
                     <div className="bg-white p-10 flex center shadow rounded-md mt-auto">
