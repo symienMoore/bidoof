@@ -64,11 +64,13 @@ export default function RootLayout({
           </header> */}
           <div className="flex h-[calc(100vh-4rem)]">
             {/* set these items to flex */}
-          <Sidebar />
-          <Header/>
+              <Sidebar />
+            <div className="flex flex-col h-full">
+              <Header/>
             <main className="flex-1 overflow-auto">
               <ConvexClientProvider>{children}</ConvexClientProvider>
             </main>
+            </div>
           </div>
           <Toaster />
         </body>
