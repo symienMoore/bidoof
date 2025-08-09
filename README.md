@@ -51,3 +51,7 @@ and will be working on messaging next.
 Handled authentication between clerk and convex wrong so I 
 will be going in to fix that, and also do some work on the 
 navbar/header section
+
+## 08-9-2025 
+made updates to the dashboard section, the current branch I'm 
+on is dedicated tot he header so I will be working on the next
