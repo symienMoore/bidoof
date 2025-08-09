@@ -1,12 +1,13 @@
 import { type Metadata } from 'next'
-import {
-  ClerkProvider,
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from '@clerk/nextjs'
+// import {
+//   ClerkProvider,
+//   SignInButton,
+//   SignUpButton,
+//   SignedIn,
+//   SignedOut,
+//   UserButton,
+// } from '@clerk/nextjs'
+import { ClerkProvider } from '@clerk/nextjs'
 import { Geist, Geist_Mono, Ranchers } from 'next/font/google'
 import './globals.css'
 import { ConvexClientProvider } from './ConvexClientProvider'
@@ -65,7 +66,7 @@ export default function RootLayout({
           <div className="flex h-[calc(100vh-4rem)]">
             {/* set these items to flex */}
               <Sidebar />
-            <div className="flex flex-col h-full">
+            <div className="flex flex-col h-full w-full">
               <Header/>
             <main className="flex-1 overflow-auto">
               <ConvexClientProvider>{children}</ConvexClientProvider>
