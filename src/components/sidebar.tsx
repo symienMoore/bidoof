@@ -6,9 +6,8 @@ const Sidebar = () => {
     <div className="w-64 h-full bg-gray-50 border-r border-gray-200 flex flex-col">
       {/* Header section */}
       <div className="p-4 border-b border-gray-200">
-        <h2 className="text-lg font-semibold text-gray-900">Files</h2>
+        <h2 className="text-lg font-semibold text-purple-500 font-ranchers">Pressto</h2>
       </div>
-      
       {/* Navigation */}
       <nav className="flex-1 p-4">
         <div className="space-y-1">
@@ -19,7 +18,7 @@ const Sidebar = () => {
               <li>
                 <Link 
                   href="/dashboard" 
-                  className="flex items-center gap-3 px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md transition-colors text-sm"
+                  className="flex items-center gap-3 px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-purple-500 rounded-md transition-colors text-sm"
                 >
                   <Home size={18} />
                   <span>Home</span>
@@ -37,7 +36,7 @@ const Sidebar = () => {
               <li>
                 <Link 
                   href="/profile" 
-                  className="flex items-center gap-3 px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md transition-colors text-sm"
+                  className="flex items-center gap-3 px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-purple-500 rounded-md transition-colors text-sm"
                 >
                   <User size={18} />
                   <span>Profile</span>

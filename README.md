@@ -46,3 +46,12 @@ I updated that really quick.
 # 08-04-2025
 updated the ui on the dashboard page, I need to update redirects
 and will be working on messaging next.
+
+## 08-7-2025
+Handled authentication between clerk and convex wrong so I 
+will be going in to fix that, and also do some work on the 
+navbar/header section
+
+## 08-9-2025 
+made updates to the dashboard section, the current branch I'm 
+on is dedicated tot he header so I will be working on the next

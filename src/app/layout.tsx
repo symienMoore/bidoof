@@ -1,17 +1,19 @@
 import { type Metadata } from 'next'
-import {
-  ClerkProvider,
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from '@clerk/nextjs'
+// import {
+//   ClerkProvider,
+//   SignInButton,
+//   SignUpButton,
+//   SignedIn,
+//   SignedOut,
+//   UserButton,
+// } from '@clerk/nextjs'
+import { ClerkProvider } from '@clerk/nextjs'
 import { Geist, Geist_Mono, Ranchers } from 'next/font/google'
 import './globals.css'
 import { ConvexClientProvider } from './ConvexClientProvider'
 import Sidebar from '@/components/sidebar'
 import { Toaster } from 'sonner'
+import Header from '@/components/ui/header'
 // import { useEffect } from 'react'
 // import { initLogRocket } from "../utils/logrocket";
 
@@ -47,7 +49,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} ${ranchers.variable} antialiased`}>
-          <header className="flex justify-end items-center p-4 gap-4 h-16 bg-background">
+          {/* <header className="flex justify-end items-center p-4 gap-4 h-16 bg-background">
             <h1>pressto</h1>
             <SignedOut>
               <SignInButton />
@@ -60,12 +62,16 @@ export default function RootLayout({
             <SignedIn>
               <UserButton />
             </SignedIn>
-          </header>
+          </header> */}
           <div className="flex h-[calc(100vh-4rem)]">
-            <Sidebar />
+            {/* set these items to flex */}
+              <Sidebar />
+            <div className="flex flex-col h-full w-full">
+              <Header/>
             <main className="flex-1 overflow-auto">
               <ConvexClientProvider>{children}</ConvexClientProvider>
             </main>
+            </div>
           </div>
           <Toaster />
         </body>
