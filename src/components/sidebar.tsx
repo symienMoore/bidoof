@@ -3,7 +3,7 @@ import { MessageSquare, User, FileText, Plus, Home, Star, Clock, Trash2 } from '
 
 const Sidebar = () => {
   return (
-    <div className="w-64 h-full bg-gray-50 border-r border-gray-200 flex flex-col">
+    <div className="w-64 h-full bg-white border-r border-gray-200 flex flex-col">
       {/* Header section */}
       <div className="p-4 border-b border-gray-200">
         <h2 className="text-lg font-semibold text-purple-500 font-ranchers">Pressto</h2>
