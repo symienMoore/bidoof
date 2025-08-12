@@ -3,8 +3,7 @@
 import { useQuery } from 'convex/react';
 import { api } from '../../convex/_generated/api';
 import { motion } from 'motion/react';
-import { File, FilePlus } from "lucide-react";
-import Link from 'next/link';
+import { File } from "lucide-react";
 import { Doc } from '../../convex/_generated/dataModel';
 
 
@@ -43,7 +42,7 @@ const DocumentList = () => {
                   </motion.div>
                   {/* update schema to show the file size */}
                   {/* <div>size: {doc.size}</div> */} 
-                  <p className="text-xl">{doc.title}</p>
+                  <p className="">{doc.title}</p>
                   <div className="text-xs text-gray-500">{new Date(doc.createdAt).toLocaleDateString()}</div>
                 </motion.div>
               })}
