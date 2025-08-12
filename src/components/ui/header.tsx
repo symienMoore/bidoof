@@ -1,21 +1,23 @@
-import { SignedOut, SignInButton, SignUpButton, SignedIn, UserButton } from '@clerk/nextjs'
+'use client'
 import React from 'react'
+import { SignedOut, SignInButton, SignUpButton, SignedIn, UserButton, useUser } from '@clerk/nextjs'
 
 
 
 
-const UserSigninedIn = () =>{
-  return(
-    <>
-
-    </>
-  )
-}
+// const UserSigninedIn = () =>{
+//   const {user} = useUser()
+//   return(
+//     <>
+//       welcome, {user?.firstName}
+//     </>
+//   )
+// }
 
 const Header = () => {
   return (
     <>
-     <header className="flex justify-end items-center p-4 gap-4 h-16 bg-background shadow">
+     <header className="flex justify-end items-center p-4 gap-4 h-16">
         <SignedOut>
           <SignInButton />
           <SignUpButton>
@@ -28,6 +30,10 @@ const Header = () => {
            <UserButton />
         </SignedIn>
       </header>
+      {/* <UserSigninedIn /> */}
+      {/* <div>
+        <h3>Welcome {user}</h3>
+      </div> */}
     </>
   )
 }
