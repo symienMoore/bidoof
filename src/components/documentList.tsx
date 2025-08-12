@@ -30,7 +30,7 @@ const DocumentList = () => {
       <div className='flex flex-col items-center justify-center mt-[700px]'>
           {/* <h1 className="text-2xl font-bold font-ranchers">Document List</h1> */}
             <div className='grid grid-cols-3 gap-10 mb-8'>
-              {d?.map((doc: Doc) => {
+              {d?.map((doc: Doc<"docs">) => {
                 return <motion.div
                  key={doc._id}
                   className="">
