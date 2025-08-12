@@ -43,8 +43,8 @@ const DocumentList = () => {
                   </motion.div>
                   {/* update schema to show the file size */}
                   {/* <div>size: {doc.size}</div> */} 
-                  <h2 className="text-xl font-semibold">{doc.title}</h2>
-                  <div className="text-xs">created at: {new Date(doc.createdAt).toLocaleDateString()}</div>
+                  <p className="text-xl">{doc.title}</p>
+                  <div className="text-xs text-gray-500">{new Date(doc.createdAt).toLocaleDateString()}</div>
                 </motion.div>
               })}
           </div>
