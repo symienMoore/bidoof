@@ -1,4 +1,4 @@
-import LogRocket from 'logrocket';
+// import LogRocket from 'logrocket';
 
 // export function initLogRocket() {
 //   if (typeof window !== "undefined") {
