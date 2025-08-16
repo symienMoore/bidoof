@@ -1,11 +1,19 @@
 'use client'
-// import React, { useState } from 'react'
+import React from 'react'
 import { useQuery } from 'convex/react';
 import { api } from '../../convex/_generated/api';
 import { motion } from 'motion/react';
 import { File } from "lucide-react";
 import { Doc } from '../../convex/_generated/dataModel';
 
+
+export const Menu = () => {
+  return (
+    <div>
+      <p>menu</p>
+    </div>
+  )
+}
 
 
 
@@ -33,7 +41,7 @@ const DocumentList = () => {
               {d?.map((doc: Doc<"docs">) => {
                 return <motion.div
                  key={doc._id}
-                  className="">
+                  className="round-md">
                   <motion.div
                    className="border p-15 flex justify-center items-center" >
                     <div className="bg-white p-10 flex center shadow rounded-md mt-auto">

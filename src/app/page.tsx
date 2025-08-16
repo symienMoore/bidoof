@@ -6,6 +6,7 @@ import { useQuery } from 'convex/react';
 import Link from 'next/link';
 import { api } from '../../convex/_generated/api';
 import { motion } from "motion/react"
+import { Menu } from '@/components/documentList';
 
 
 
@@ -49,6 +50,7 @@ const Page = () => {
   console.log(user, isSignedIn, isLoaded);
   return (
     <div>
+        <Menu/>
         {user ? UserWelcome() : UserSignIn()}
     </div>
   )
