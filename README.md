@@ -20,7 +20,7 @@
 - [x] storybook
 
 
-#Devlog
+# Devlog
 
 ## 07-21-2025
 reviewed schema files from convex docs, small ui changes to document list
@@ -45,7 +45,7 @@ specifically working on the dashbaord ux/ui of it.
 *update*: file url wasnt being saved to the document in the databse, so
 I updated that really quick.
 
-# 08-04-2025
+## 08-04-2025
 updated the ui on the dashboard page, I need to update redirects
 and will be working on messaging next.
 
